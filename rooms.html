@@ -1,0 +1,408 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Posada Glorias Patrias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=|Roboto+Sans:400,700|Playfair+Display:400,700">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+    <header class="site-header js-site-header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-lg-4 site-logo" data-aos="fade"><a href="index.html"><img src="images/logodo.png" alt="Logo" width="150" height="120"></a></div>
+          <div class="col-6 col-lg-8">
+
+
+            <div class="site-menu-toggle js-site-menu-toggle"  data-aos="fade">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <!-- END menu-toggle -->
+
+            <div class="site-navbar js-site-navbar">
+              <nav role="navigation">
+                <div class="container">
+                  <div class="row full-height align-items-center">
+                    <div class="col-md-6 mx-auto">
+                      <ul class="list-unstyled menu">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li class="active"><a href="rooms.html">Habitaciones</a></li>
+                        <li><a href="about.html">Sobre nosotros</a></li>
+                        <li><a href="events.html">Eventos</a></li>
+                        <li><a href="contact.html">Contáctanos</a></li>
+                        <li><a href="reservation.html">Reservaciones</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END head -->
+
+    <section class="site-hero inner-page overlay" style="background-image: url(images/hero_5.jpg)" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row site-hero-inner justify-content-center align-items-center">
+          <div class="col-md-10 text-center" data-aos="fade">
+            <h1 class="heading mb-3">¡Somos tu Hogar lejos de Casa! </h1>
+            <ul class="custom-breadcrumbs mb-4">
+              <li><a href="index.html">Inicio</a></li>
+              <li>&bullet;</li>
+              <li>Habitaciones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <a class="mouse smoothscroll" href="#next">
+        <div class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </div>
+      </a>
+    </section>
+    <!-- END section -->
+
+    <section class="section pb-4">
+      <div class="container">
+       
+        <div class="row check-availabilty" id="next">
+          <div class="block-32" data-aos="fade-up" data-aos-offset="-200">
+
+<!-- Sección de Cotiza tu Hospedaje -->
+<section class="section bg-light">
+  <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-7">
+              <h2 class="heading" data-aos="fade">Cotiza tu Hospedaje</h2>
+          </div>
+      </div>
+      <form id="quoteForm">
+          <div class="row">
+              <div class="col-md-4 mb-3">
+                  <label for="room_type" class="font-weight-bold">Tipo de Habitación</label>
+                  <select id="room_type" class="form-control" required>
+                      <option value="">Seleccione una opción</option>
+                      <option value="35">Junior - $35</option>
+                      <option value="55">Deluxe - $55</option>
+                      <option value="70">Doble - $70</option>
+                  </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="breakfast" class="font-weight-bold">Desayuno adicional</label>
+                  <select id="breakfast" class="form-control" onchange="toggleBreakfast()"> 
+                      <option value="0">No</option>
+                      <option value="8">Sí - $8</option>
+                  </select>
+              </div>
+              <div class="col-md-4 mb-3" id="person_count_container" style="display:none;">
+                  <label for="num_persons" class="font-weight-bold">Cantidad de personas</label>
+                  <select id="num_persons" class="form-control">
+                      <option value="0">Seleccione</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                  </select>
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="checkin_date" class="font-weight-bold">Fecha de Check In</label>
+                  <input type="date" id="checkin_date" class="form-control" required onchange="calculateNights()">
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="checkout_date" class="font-weight-bold">Fecha de Check Out</label>
+                  <input type="date" id="checkout_date" class="form-control" required onchange="calculateNights()">
+              </div>
+              <div class="col-md-4 mb-3">
+                  <label for="nights" class="font-weight-bold">Cantidad de noches</label>
+                  <input type="number" id="nights" class="form-control" readonly>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calcular</button>
+          </div>
+          <div class="col-md-12 mt-3">
+              <h4 id="total_amount" class="font-weight-bold"></h4>
+          </div>
+      </form>
+  </div>
+</section>
+
+<script>
+  function toggleBreakfast() {
+      const breakfast = document.getElementById('breakfast').value;
+      const personCountContainer = document.getElementById('person_count_container');
+      personCountContainer.style.display = (breakfast === "8") ? "block" : "none";
+  }
+
+  function calculateNights() {
+      const checkinDate = new Date(document.getElementById('checkin_date').value);
+      const checkoutDate = new Date(document.getElementById('checkout_date').value);
+      const nights = (checkoutDate - checkinDate) / (1000 * 60 * 60 * 24);
+      document.getElementById('nights').value = nights > 0 ? nights : 0;
+  }
+
+  function calculateTotal() {
+      const roomPrice = parseInt(document.getElementById('room_type').value);
+      const breakfastPrice = parseInt(document.getElementById('breakfast').value);
+      const numPersons = parseInt(document.getElementById('num_persons').value);
+      const nights = parseInt(document.getElementById('nights').value);
+
+      if (nights > 0) {
+          const total = (roomPrice * nights) + (breakfastPrice * numPersons);
+          document.getElementById('total_amount').innerText = `Total a pagar: $${total}`;
+      } else {
+          document.getElementById('total_amount').innerText = "Por favor, verifique las fechas de Check In y Check Out.";
+      }
+  }
+</script>
+      </div>
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <div class="container">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-5">
+            <div class="col-md-7">
+              <h2 class="heading" data-aos="fade">Nuestros Servicios</h2>
+              <p data-aos="fade">Nos enorgullece ofrecer una variedad de servicios diseñados para asegurar que su estancia sea inolvidable y cómoda.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">📶</span> <!-- Emoji para Wifi -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Wifi</h2>
+                </div>
+              </a>
+            </div>
+    
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">🍽️</span> <!-- Emoji para Desayuno -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Desayuno</h2>
+                </div>
+              </a>
+            </div>
+    
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">❄️</span> <!-- Emoji para Aire Acondicionado -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Aire Acondicionado</h2>
+                </div>
+              </a>
+            </div>
+    
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">🧹</span> <!-- Emoji para Servicio de limpieza -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Servicio de Limpieza</h2>
+                </div>
+              </a>
+            </div>
+    
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">🅿️</span> <!-- Emoji para Estacionamiento -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Estacionamiento</h2>
+                </div>
+              </a>
+            </div>
+    
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">🔋</span> <!-- Emoji para Planta eléctrica -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Planta Eléctrica</h2>
+                </div>
+              </a>
+            </div>
+    
+            <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+              <a href="#" class="room">
+                <figure class="img-wrap">
+                  <span style="font-size: 50px;">🏷️</span> <!-- Emoji para Amenidades -->
+                </figure>
+                <div class="p-3 text-center room-info">
+                  <h2>Amenidades</h2>
+                </div>
+              </a>
+            </div>
+          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+            <a href="#" class="room">
+              <figure class="img-wrap">
+                <span style="font-size: 50px;">👘</span> <!-- Emoji para Batas de baño -->
+              </figure>
+              <div class="p-3 text-center room-info">
+                <h2>Batas de Baño</h2>
+              </div>
+            </a>
+          </div>
+  
+          <div class="col-md-6 col-lg-4 mb-5" data-aos="fade-up">
+            <a href="#" class="room">
+              <figure class="img-wrap">
+                <span style="font-size: 50px;">♨️</span> <!-- Emoji para Calentador de agua -->
+              </figure>
+              <div class="p-3 text-center room-info">
+                <h2>Calentador de Agua</h2>
+        </div>
+      </div>
+    </section>
+    
+        </div>
+      </div>
+    </section>
+    
+    <section class="section bg-light">
+
+     <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-md-7">
+            <h2 class="heading" data-aos="fade">Nuestras habitaciones</h2>
+          </div>
+        </div> 
+      
+        <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
+          <a href="#" class="image d-block bg-image-2" style="background-image: url('images/hero_7.jpg');"></a>
+          <div class="text">
+            <span class="d-block mb-4"><span class="display-4 text-primary">35$</span> <span class="text-uppercase letter-spacing-2">/ por noche</span> </span>
+            <h2 class="mb-4">Habitación Junior</h2>
+            <p>Nuestra acogedora habitación está diseñada para ofrecerte el máximo confort durante tu estancia. A continuación, te presentamos lo que encontrarás: Smart tv, Aire acondicionado, Calentador de agua, Amenidades, Toalla de mano cuerpo y alfombrin.</p>
+          </div>
+        </div>
+        <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="200">
+          <a href="#" class="image d-block bg-image-2 order-2" style="background-image: url('images/hero_8.jpg');"></a>
+          <div class="text order-1">
+            <span class="d-block mb-4"><span class="display-4 text-primary">55$</span> <span class="text-uppercase letter-spacing-2">/ por noche</span> </span>
+            <h2 class="mb-4">Habitación Deluxe</h2>
+            <p>Nuestra acogedora habitación está diseñada para ofrecerte el máximo confort durante tu estancia. A continuación, te presentamos lo que encontrarás: Smart tv, Aire acondicionado, Calentador de agua, Amenidades, Batas de baño, Toalla de mano cuerpo y alfombrin, Desayuno incluido.</p>
+          </div>
+        </div>
+        <div class="site-block-half d-block d-lg-flex bg-white" data-aos="fade" data-aos-delay="100">
+          <a href="#" class="image d-block bg-image-2" style="background-image: url('images/hero_9.jpg');"></a>
+          <div class="text">
+            <span class="d-block mb-4"><span class="display-4 text-primary">70$</span> <span class="text-uppercase letter-spacing-2">/ por noche</span> </span>
+            <h2 class="mb-4">Habitación Doble</h2>
+            <p>Nuestra acogedora habitación está diseñada para ofrecerte el máximo confort durante tu estancia. A continuación, te presentamos lo que encontrarás: Smart tv, Aire acondicionado, Calentador de agua, Amenidades, Batas de baño, Toalla de mano cuerpo y alfombrin, Desayuno incluido.</p>
+      </div>
+    </section>
+
+
+    <section class="section bg-image overlay" style="background-image: url('images/hero_4.jpg');">
+      <div class="container" >
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6 text-center mb-4 mb-md-0 text-md-left" data-aos="fade-up">
+            <h2 class="text-white font-weight-bold"> Descubre el servicio excepcional que ofrecemos y crea momentos memorables con nosotros. </h2>
+          </div>
+          <div class="col-12 col-md-6 text-center text-md-right" data-aos="fade-up" data-aos-delay="200">
+            <a href="reservation.html" class="btn btn-outline-white-primary py-3 text-white px-5">¡Reserva Ahora!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <footer class="section footer-section" style="font-size: 1.2em; padding: 20px 0;">
+      <div class="container">
+          <div class="row mb-2"> <!-- Reduce el margen inferior -->
+              <div class="col-md-6 mb-3"> <!-- Columna para el copyright y redes sociales -->
+                  <p class="text-left" style="margin-bottom: 0;"> <!-- Reduce el margen inferior -->
+                      Copyright ©2024 Todos los derechos reservados por el autor | Diseñado por <a target="_blank">@Nayeliaf</a>
+                  </p>
+                  <p class="text-center social" style="display: flex; justify-content: center; align-items: center; margin-bottom: 0;"> <!-- Reduce el margen inferior -->
+                      <a href="https://www.instagram.com/posadagloriaspatrias/?hl=es" target="_blank" style="margin-right: 10px; font-size: 1.5em;">
+                          <span class="fa fa-instagram"></span>
+                      </a>
+                      <a href="https://www.facebook.com/posadagloriaspatrias/" target="_blank" style="font-size: 1.5em;">
+                          <span class="fa fa-facebook"></span>
+                      </a>
+                  </p>
+              </div>
+              <div class="col-md-6 mb-3 text-right"> <!-- Columna para la información de contacto -->
+                  <div class="contact-info">
+                      <p>
+                          <span class="d-block">
+                              <span class="ion-ios-location h5 mr-2 text-primary"></span>Dirección:
+                          </span>
+                          <span>Mérida-Venezuela,<br> Av 2 Obispo Lora, Calle 36, Sector Glorias Patrias.</span>
+                      </p>
+                      <p>
+                          <span class="d-block">
+                              <span class="ion-ios-telephone h5 mr-2 text-primary"></span>Teléfono:
+                          </span>
+                          <span>(+58) 412-1388327</span>
+                      </p>
+                      <p>
+                          <span class="d-block">
+                              <span class="ion-ios-email h5 mr-2 text-primary"></span>Correo electrónico:
+                          </span>
+                          <span>posadagloriaspatrias@gmail.com</span>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+  </html>
+  
