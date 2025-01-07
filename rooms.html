@@ -101,60 +101,60 @@
           </div>
       </div>
       <form id="quoteForm">
-          <div class="row">
-              <div class="col-md-4 mb-3">
-                  <label for="room_type" class="font-weight-bold">Tipo de Habitación</label>
-                  <select id="room_type" class="form-control" required>
-                      <option value="">Seleccione una opción</option>
-                      <option value="35">Junior - $35</option>
-                      <option value="55">Deluxe - $55</option>
-                      <option value="70">Doble - $70</option>
-                  </select>
-              </div>
-              <div class="col-md-4 mb-3">
-                  <label for="breakfast" class="font-weight-bold">Desayuno adicional</label>
-                  <select id="breakfast" class="form-control" onchange="toggleBreakfast()"> 
-                      <option value="0">No</option>
-                      <option value="8">Sí - $8</option>
-                  </select>
-              </div>
-              <div class="col-md-4 mb-3" id="person_count_container" style="display:none;">
-                  <label for="num_persons" class="font-weight-bold">Cantidad de personas</label>
-                  <select id="num_persons" class="form-control">
-                      <option value="0">Seleccione</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                  </select>
-              </div>
-              <div class="col-md-4 mb-3">
-                  <label for="checkin_date" class="font-weight-bold">Fecha de Check In</label>
-                  <input type="date" id="checkin_date" class="form-control" required onchange="calculateNights()">
-              </div>
-              <div class="col-md-4 mb-3">
-                  <label for="checkout_date" class="font-weight-bold">Fecha de Check Out</label>
-                  <input type="date" id="checkout_date" class="form-control" required onchange="calculateNights()">
-              </div>
-              <div class="col-md-4 mb-3">
-                  <label for="nights" class="font-weight-bold">Cantidad de noches</label>
-                  <input type="number" id="nights" class="form-control" readonly>
-              </div>
-          </div>
-          <div class="col-md-12">
-              <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calcular</button>
-          </div>
-          <div class="col-md-12 mt-3">
-              <h4 id="total_amount" class="font-weight-bold"></h4>
-          </div>
-      </form>
-  </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="room_type" class="font-weight-bold">Tipo de Habitación</label>
+                <select id="room_type" class="form-control" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="35">Junior - $35</option>
+                    <option value="55">Deluxe - $55</option>
+                    <option value="70">Doble - $70</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="breakfast" class="font-weight-bold">Desayuno adicional</label>
+                <select id="breakfast" class="form-control" onchange="toggleBreakfast()"> 
+                    <option value="0">No</option>
+                    <option value="8">Sí - $8</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3" id="person_count_container" style="display:none;">
+                <label for="num_persons" class="font-weight-bold">Cantidad de personas</label>
+                <select id="num_persons" class="form-control">
+                    <option value="0">Seleccione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="checkin_date" class="font-weight-bold">Fecha de Check-In</label>
+                <input type="text" id="checkin_date" name="checkin_date" class="form-control" required onchange="calculateNights()">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="checkout_date" class="font-weight-bold">Fecha de Check-Out</label>
+                <input type="text" id="checkout_date" name="checkout_date" class="form-control" required onchange="calculateNights()">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="nights" class="font-weight-bold">Cantidad de noches</label>
+                <input type="number" id="nights" class="form-control" readonly>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary" onclick="calculateTotal()">Calcular</button>
+        </div>
+        <div class="col-md-12 mt-3">
+            <h4 id="total_amount" class="font-weight-bold"></h4>
+        </div>
+    </form>
+      </div>
 </section>
 
 <script>
